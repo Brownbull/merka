@@ -11,13 +11,61 @@ pmsort command execution: /pmsort
 ## Summary
 - Total Epics: 7
 - Total Stories: 20
-- Total Tasks (Queue): 63
+- Total Tasks (Queue): 75 (63 original + 12 strategic implementation tasks)
 - Agent Distribution:
-  - VIVA: 7
-  - SYRA: 18
-  - MAKA: 24
+  - VIVA: 13 (7 + 6 new)
+  - SYRA: 21 (18 + 3 new)
+  - MAKA: 27 (24 + 3 new)
   - QRA: 12
   - LUA: 2
+
+## Strategic Decisions
+
+### Market Strategy (Q1, Q2, Q15)
+- **Target Market**: All Hispanic/Latino community initially, not limited to Mexican-Americans (Q1)
+- **Market Balance**: Balanced approach between US-born Hispanic families vs. recent immigrants (Q2)
+- **Remittance Strategy**: Exclude remittances and cross-border family financial support to avoid regulatory complexity (Q15)
+
+### Cultural Strategy (Q3, Q11, Q13)
+- **Cultural Approach**: Unified approach for handling regional differences, starting with implementation in Villarrica, Chile (Q3)
+- **Language Sophistication**: Native fluency level targeting, using more icons than words, like navigating a game dashboard (Q11)
+- **Spanish Style**: Maintain formal Spanish, avoiding regional slang (Q13)
+
+### Competitive & Partnership Strategy (Q4, Q5, Q22, Q23)
+- **Competition Response**: Feature differentiation strategy when major competitors add Spanish support, focusing on simplicity (Q4)
+- **Partnership Approach**: Competition for now against existing Hispanic fintech companies (Q5)
+- **Community Outreach**: Target business associations for user acquisition (Q22)
+- **Government Relations**: No partnership with consulates for financial literacy programming (Q23)
+
+### Product Strategy (Q12, Q20, Q21, Q24)
+- **Language Options**: User choice between Spanish or English (not mixed), clean language separation (Q12)
+- **Family Plans**: Flexible sharing options to accommodate Hispanic family structures (Q20)
+- **Payment Methods**: Digital only for app subscriptions, no cash payment accommodation (Q21)
+- **Distribution Strategy**: Educational content approach with Hispanic financial advisors and tax preparers (Q24)
+
+### Monetization Strategy (Q19)
+- **Pricing Model**: Freemium approach considering Hispanic market pricing sensitivity (Q19)
+
+## Technical Constraints
+
+### Performance & Infrastructure (Q6, Q9, Q10)
+- **OCR Accuracy**: 90% accuracy threshold requirement for cost justification (Q6)
+- **Cloud Strategy**: AWS scaling approach for handling peak usage during tax season (Q9)
+- **Network Optimization**: Offline-first architecture for Mexican network infrastructure and device limitations (Q10)
+
+### Data Processing (Q7, Q8)
+- **Receipt Processing**: Crowdsourced training approach for handling non-standard Mexican business receipt formats (Q7)
+- **Categorization Model**: Build our own Spanish receipt categorization model rather than enhancing existing providers (Q8)
+
+### Privacy & Data Management (Q14)
+- **Data Storage**: All personal data must be stored locally only; uploaded data for stats comparison must be unidentifiable (Q14)
+
+## Compliance Constraints
+
+### Regulatory Compliance (Q16, Q17, Q18)
+- **Data Protection**: Apply only Chilean compliance requirements, not Mexican data protection laws (Q16)
+- **Tax Compliance**: Consider Chilean tax code only for tax-related features (Q17)
+- **Financial Monitoring**: Threshold-based approach for anti-money laundering and financial monitoring requirements (Q18)
 
 ## Epics
 
@@ -46,8 +94,8 @@ pmsort command execution: /pmsort
     **Tasks**:
       - [ ] (SYRA) Define OCR service abstraction layer architecture
         **Acceptance**: Service interface design with provider switching and confidence scoring
-      - [ ] (MAKA) Integrate Google Cloud Vision API with Spanish optimization
-        **Acceptance**: Receipt text extraction with Mexican business name recognition >85%
+      - [ ] (MAKA) Integrate Google Cloud Vision API with Spanish optimization targeting 90% accuracy (Q6)
+        **Acceptance**: Receipt text extraction with Chilean business name recognition >90%
       - [ ] (MAKA) Implement Azure Computer Vision fallback service
         **Acceptance**: Automatic failover when primary service unavailable, <10 second timeout
       - [ ] (QRA) Build OCR accuracy testing framework with Mexican receipt corpus
@@ -61,8 +109,8 @@ pmsort command execution: /pmsort
     **Tasks**:
       - [ ] (SYRA) Design receipt parsing data pipeline architecture
         **Acceptance**: Modular parser design supporting multiple Mexican receipt formats
-      - [ ] (MAKA) Implement Mexican date format recognition algorithms
-        **Acceptance**: Support for dd/mm/yyyy, DD de MMM de YYYY formats with 95% accuracy
+      - [ ] (MAKA) Implement Chilean date format recognition algorithms with crowdsourced training (Q7)
+        **Acceptance**: Support for dd/mm/yyyy, DD de MMM de YYYY formats with 95% accuracy using user corrections
       - [ ] (MAKA) Build price extraction with peso currency validation  
         **Acceptance**: 98% accuracy on price extraction with Mexican tax calculation validation
       - [ ] (MAKA) Create merchant name normalization for Mexican businesses
@@ -74,8 +122,8 @@ pmsort command execution: /pmsort
     **Description**: Support interrupted network scenarios common in Mexican retail locations  
     **Acceptance Signals**: 10 receipt offline capacity, auto-sync when connected, data integrity
     **Tasks**:
-      - [ ] (SYRA) Design offline-first data architecture with sync capabilities
-        **Acceptance**: Architecture supporting offline queue with conflict resolution
+      - [ ] (SYRA) Design offline-first data architecture with sync capabilities (Q10)
+        **Acceptance**: Architecture supporting offline queue with conflict resolution for Chilean network conditions
       - [ ] (MAKA) Implement local storage for receipt images and metadata
         **Acceptance**: SQLite-based queue with 10+ receipt capacity and encryption
       - [ ] (MAKA) Build background sync service for network recovery
@@ -100,20 +148,24 @@ pmsort command execution: /pmsort
 **Value Theme**: Deliver culturally authentic Hispanic financial interface, not translated English app
 **Linked Metrics**: 95% Spanish interface retention, 4.0+ app rating, <5% cultural complaints
 **Stories**:
-  - STORY: Mexican Spanish Localization
-    **Description**: Implement peso formatting, cultural terminology, family-focused language
-    **Acceptance Signals**: Mexican currency formatting, appropriate financial terminology, family context
+  - STORY: Chilean Spanish Localization
+    **Description**: Implement peso formatting, cultural terminology, family-focused language for unified approach
+    **Acceptance Signals**: Chilean currency formatting, appropriate financial terminology, family context
     **Tasks**:
-      - [ ] (VIVA) Research authentic Mexican Spanish financial terminology preferences
-        **Acceptance**: Survey results from 100+ Mexican users on preferred financial language
-      - [ ] (QRA) Create Spanish language style guide for financial contexts
-        **Acceptance**: Comprehensive guide covering terminology, tone, cultural sensitivities
-      - [ ] (MAKA) Implement peso currency formatting with Mexican conventions
-        **Acceptance**: $1,234.50 MXN formatting with proper thousands separators
+      - [ ] (VIVA) Research authentic Chilean Spanish financial terminology preferences (Q3, Q11, Q13)
+        **Acceptance**: Survey results from 100+ Chilean users on preferred formal financial language with icon-heavy interface
+      - [ ] (QRA) Create formal Spanish language style guide for financial contexts (Q13)
+        **Acceptance**: Comprehensive guide covering formal terminology, tone, cultural sensitivities
+      - [ ] (MAKA) Implement peso currency formatting with Chilean conventions
+        **Acceptance**: $1,234.50 CLP formatting with proper thousands separators
       - [ ] (MAKA) Build family-oriented language patterns for UI text
         **Acceptance**: Interface text emphasizing "hogar", "familia", collaborative financial management
-      - [ ] (LUA) Validate language authenticity with Mexican families
-        **Acceptance**: Cultural authenticity testing with native Mexican Spanish speakers
+      - [ ] (LUA) Validate language authenticity with Chilean families (Q3)
+        **Acceptance**: Cultural authenticity testing with native Chilean Spanish speakers for unified approach
+      - [ ] (MAKA) Implement language selection system with Spanish/English choice (Q12)
+        **Acceptance**: User can choose Spanish or English (no mixed languages), preference persists across sessions
+      - [ ] (MAKA) Design icon-heavy interface for game-like dashboard navigation (Q11)
+        **Acceptance**: Interface prioritizing visual icons over text for native fluency users
 
   - STORY: Cultural Category Taxonomy
     **Description**: Build spending categories for quinceañeras, religious events, extended family support
@@ -136,8 +188,8 @@ pmsort command execution: /pmsort
     **Tasks**:
       - [ ] (VIVA) Research Hispanic family financial management patterns
         **Acceptance**: Understanding of decision-making, privacy, sharing expectations in Hispanic families
-      - [ ] (SYRA) Design multi-user account architecture with family privacy controls
-        **Acceptance**: Technical architecture supporting individual privacy within family transparency
+      - [ ] (SYRA) Design multi-user account architecture with family privacy controls and local data storage (Q14, Q20)
+        **Acceptance**: Technical architecture supporting individual privacy within flexible family sharing, all personal data stored locally
       - [ ] (MAKA) Implement family dashboard with appropriate sharing levels
         **Acceptance**: UI supporting individual and shared expense views with cultural appropriate defaults
       - [ ] (QRA) Test family interface patterns with multi-generational Hispanic families
@@ -185,10 +237,10 @@ pmsort command execution: /pmsort
     **Tasks**:
       - [ ] (VIVA) Curate dataset of 10,000+ Mexican receipt samples with cultural categories
         **Acceptance**: Diverse receipt dataset covering Mexican businesses and cultural spending patterns
-      - [ ] (SYRA) Design ML pipeline architecture for Spanish categorization
-        **Acceptance**: Scalable ML architecture supporting model training and real-time inference
-      - [ ] (MAKA) Train categorization model using scikit-learn with Spanish NLP
-        **Acceptance**: Machine learning model achieving 87% accuracy on Mexican receipt categorization
+      - [ ] (SYRA) Design ML pipeline architecture for Spanish categorization using AWS scaling (Q8, Q9)
+        **Acceptance**: Scalable ML architecture supporting model training and real-time inference with custom Spanish receipt categorization
+      - [ ] (MAKA) Train custom Spanish categorization model using scikit-learn (Q8)
+        **Acceptance**: Machine learning model achieving 87% accuracy on Chilean receipt categorization
       - [ ] (MAKA) Implement model inference API with confidence scoring
         **Acceptance**: FastAPI endpoint providing category predictions with confidence levels
       - [ ] (QRA) Build automated model performance monitoring and testing
@@ -310,6 +362,36 @@ pmsort command execution: /pmsort
 - Broader market accessibility
 - High-value user segment capture
 - Scalability and performance optimization
+
+## Additional Strategic Implementation Tasks
+
+### Compliance & Legal Framework Tasks (Q16, Q17, Q18)
+- [ ] (SYRA) Research and implement Chilean data protection compliance requirements (Q16)
+  **Acceptance**: Technical implementation meeting Chilean compliance standards
+- [ ] (VIVA) Integrate Chilean tax code considerations into categorization system (Q17)
+  **Acceptance**: Tax categories and reporting aligned with Chilean tax requirements
+- [ ] (SYRA) Implement threshold-based financial monitoring for AML compliance (Q18)
+  **Acceptance**: Automated monitoring system with configurable thresholds
+
+### Monetization Strategy Tasks (Q19, Q21)
+- [ ] (VIVA) Design freemium pricing model for Hispanic market sensitivity (Q19)
+  **Acceptance**: Tiered pricing strategy validated with Chilean market research
+- [ ] (MAKA) Implement digital-only payment processing (Q21)
+  **Acceptance**: Payment integration supporting credit cards and digital wallets only
+
+### Partnership & Growth Strategy Tasks (Q4, Q5, Q22, Q24)
+- [ ] (VIVA) Develop feature differentiation strategy against major competitors (Q4)
+  **Acceptance**: Competitive analysis and unique value propositions focused on simplicity
+- [ ] (VIVA) Establish business association partnerships for user acquisition (Q22)
+  **Acceptance**: Partnership agreements with Chilean business associations
+- [ ] (VIVA) Create educational content strategy for financial advisor distribution (Q24)
+  **Acceptance**: Content library for Hispanic financial advisors and tax preparers
+
+### Data Privacy & Architecture Tasks (Q14, Q15)
+- [ ] (SYRA) Implement local-only personal data storage architecture (Q14)
+  **Acceptance**: Personal data never leaves device, anonymized aggregate data only for stats
+- [ ] (MAKA) Remove remittance tracking features from scope (Q15)
+  **Acceptance**: No remittance-related functionality in application design
 
 ## Dependencies & Critical Path
 
