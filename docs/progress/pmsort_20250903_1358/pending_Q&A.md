@@ -35,81 +35,28 @@ pmsort command execution: /pmsort
 | Q23 | Partnership Strategy | Should we partner with Mexican consulates for financial literacy programming? | Government partnership vs. Independent vs. NGO collaboration | VIVA + Community Relations | P3 | PRD.refined.md:1992 |
 | Q24 | Distribution Strategy | What role should Hispanic financial advisors and tax preparers play in our distribution strategy? | Professional referrals vs. B2B partnership vs. Educational content | VIVA + Business Development | P2 | PRD.refined.md:1998 |
 
-## Grouped By Topic
-
-### Architecture & Technical Strategy
-- **Q6**: OCR accuracy threshold vs. cost trade-off (P1)
-- **Q7**: Non-standard Mexican business receipt handling (P2)
-- **Q8**: Custom ML model vs. enhanced existing providers (P1)
-- **Q9**: Cloud infrastructure for tax season peaks (P2)
-- **Q10**: Mexican network/device optimization approach (P1)
-- **Q16**: Mexican data protection compliance requirements (P1)
-- **Q18**: Anti-money laundering compliance scope (P1)
-
-### Market & Cultural Strategy
-- **Q1**: Target market definition (Mexican-Americans vs. broader Hispanic) (P1)
-- **Q2**: US-born vs. recent immigrant balance (P1)
-- **Q3**: Regional Mexican cultural variation handling (P2)
-- **Q13**: Formal Spanish vs. regional expressions (P3)
-- **Q15**: Cross-border remittance feature scope (P2)
-
-### User Experience & Localization
-- **Q11**: Spanish language sophistication level (P2)
-- **Q12**: Hybrid English-Spanish interface approach (P2)
-- **Q14**: Individual privacy vs. family transparency (P1)
-
-### Business Model & Monetization
-- **Q19**: Hispanic market pricing sensitivity (P1)
-- **Q20**: Extended family plan structures (P2)
-- **Q21**: Cash payment accommodation (P2)
-
-### Competition & Partnerships
-- **Q4**: Response to major competitor Spanish support (P1)
-- **Q5**: Hispanic fintech partnership vs. competition (P2)
-- **Q22**: Community organization partnership strategy (P2)
-- **Q23**: Mexican consulate partnership opportunity (P3)
-- **Q24**: Financial professional distribution strategy (P2)
-
-### Compliance & Legal
-- **Q16**: Mexican data protection requirements (P1)
-- **Q17**: Dual US-Mexico tax implications (P2)
-- **Q18**: AML/financial monitoring requirements (P1)
-
-## Prioritization Method
-
-**Priority Levels**:
-- **P1 (High)**: Blocks core development or regulatory compliance (9 questions)
-- **P2 (Medium)**: Impacts feature scope or user experience (13 questions)
-- **P3 (Low)**: Nice-to-have or future consideration (2 questions)
-
-**Impact Assessment**:
-Priority = Impact (user/business success) × Urgency (development blocker degree)
-
-**Decision Timeline Requirements**:
-- **P1 Questions**: Decisions needed within 2-4 weeks to prevent development blocking
-- **P2 Questions**: Decisions needed within 4-8 weeks for feature completeness
-- **P3 Questions**: Decisions can be deferred to post-MVP phases
-
-## Escalation Framework
-
-**Green (Normal Process)**: P3 questions, standard research and advisory board consultation
-**Yellow (Accelerated)**: P2 questions requiring cross-functional team alignment and community input
-**Red (Executive Decision Required)**: P1 questions blocking development or creating compliance risk
-
-## Next Steps
-
-1. **Immediate P1 Resolution** (Weeks 1-2):
-   - Market targeting strategy (Q1, Q2)
-   - Technical architecture decisions (Q6, Q8, Q10)
-   - Compliance framework establishment (Q16, Q18)
-
-2. **P2 Strategic Alignment** (Weeks 3-6):
-   - Cultural strategy refinement (Q3, Q11-Q15)
-   - Business model validation (Q19-Q21)
-   - Partnership strategy development (Q5, Q22, Q24)
-
-3. **P3 Future Planning** (Post-MVP):
-   - Regional localization depth (Q13)
-   - Advanced partnership opportunities (Q23)
-
-All questions include specific agent ownership assignments and require structured decision documentation with rationale and implementation implications.
+## Answers
+Q1 All Hispanic/Latino.
+Q2 Balanced approach.
+Q3 Unified approach, this will firstly be implemented in Villarrica, Chile.
+Q4 Feature differentiation, aiming for simplicity in handling the app.
+Q5 !EXPLAIN
+Q6 90%.
+Q7 !EXPLAIN
+Q8 Our own spanish receipt categorization.
+Q9 AWS scaling.
+Q10 Offline-first.
+Q11 Native fluency, using more icons than words, it should be like navigate into a game dashboard.
+Q12 User choice, but the app will be in spanish or english, not a mix.
+Q13 Formal spanish.
+Q14 All the personal data must be stored locally only, the uploaded data for stats comparison must be unidentifiable.
+Q15 !EXPLAIN
+Q16 !EXPLAIN
+Q17 Consider the Chilean tax code only.
+Q18 Threshold based.
+Q19 Freemium.
+Q20 Flexible sharing.
+Q21 Digital only.
+Q22 Business associations.
+Q23 no.
+Q24 educational content.
