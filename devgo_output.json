@@ -1,0 +1,29 @@
+{
+  "folder": "docs/progress/pmsort_20250903_1358",
+  "reconciled_finished": 0,
+  "selected_started": 1,
+  "advanced": {
+    "in_progress": 0,
+    "completed": 0,
+    "verified": 0
+  },
+  "applied_to_queue": 0,
+  "issues": {
+    "opened": 0,
+    "closed": 0,
+    "open_total": 0
+  },
+  "filters": {
+    "agent": "*",
+    "epic": "*",
+    "story": "*",
+    "limit": 1
+  },
+  "dry_run": false,
+  "warnings": [],
+  "integrity": {
+    "missing_files": [],
+    "duplicate_task_ids": [],
+    "invalid_agent_tags": []
+  }
+}
