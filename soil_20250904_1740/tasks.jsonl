@@ -1,0 +1,40 @@
+{"id":"t001","agent":"S","epic":"e1","phase":1,"desc":"Design WhatsApp Business API architecture and webhook system","effort":8,"critical":true,"deps":[]}
+{"id":"t002","agent":"S","epic":"e2","phase":1,"desc":"Design dual OCR provider architecture (Google Vision + Azure fallback)","effort":5,"critical":true,"deps":[]}
+{"id":"t003","agent":"S","epic":"e1","phase":1,"desc":"Design secure receipt image storage with AES-256 encryption","effort":6,"critical":true,"deps":[]}
+{"id":"t004","agent":"S","epic":"e3","phase":1,"desc":"Design PostgreSQL time-series schema for spending analytics","effort":4,"critical":false,"deps":[]}
+{"id":"t005","agent":"S","epic":"e2","phase":1,"desc":"Design Redis caching and queue architecture for async processing","effort":3,"critical":false,"deps":[]}
+{"id":"t006","agent":"V","epic":"e4","phase":1,"desc":"Define Spanish-first business taxonomy and cultural categories","effort":6,"critical":true,"deps":[]}
+{"id":"t007","agent":"V","epic":"e5","phase":1,"desc":"Create Hispanic family persona validation framework","effort":4,"critical":false,"deps":[]}
+{"id":"t008","agent":"V","epic":"e5","phase":1,"desc":"Design freemium business model with OXXO cash payment integration","effort":5,"critical":false,"deps":[]}
+{"id":"t009","agent":"M","epic":"e1","phase":2,"desc":"Implement WhatsApp webhook API endpoints with photo processing","effort":8,"critical":true,"deps":["t001"]}
+{"id":"t010","agent":"M","epic":"e1","phase":2,"desc":"Build Flask microservice for receipt upload and validation","effort":6,"critical":true,"deps":["t003"]}
+{"id":"t011","agent":"M","epic":"e2","phase":2,"desc":"Implement Google Vision OCR integration with error handling","effort":7,"critical":true,"deps":["t002"]}
+{"id":"t012","agent":"M","epic":"e2","phase":2,"desc":"Build Azure Computer Vision fallback OCR service","effort":5,"critical":true,"deps":["t002","t011"]}
+{"id":"t013","agent":"M","epic":"e3","phase":2,"desc":"Create PostgreSQL models for receipts, users, and spending data","effort":6,"critical":true,"deps":["t004"]}
+{"id":"t014","agent":"M","epic":"e2","phase":2,"desc":"Build Redis queue management for async OCR processing","effort":4,"critical":false,"deps":["t005"]}
+{"id":"t015","agent":"M","epic":"e2","phase":3,"desc":"Implement Mexican receipt format parser for line items","effort":8,"critical":true,"deps":["t011"]}
+{"id":"t016","agent":"M","epic":"e4","phase":3,"desc":"Build Spanish ML categorization service with user feedback","effort":9,"critical":true,"deps":["t006","t015"]}
+{"id":"t017","agent":"M","epic":"e6","phase":3,"desc":"Create React Native mobile app with camera integration","effort":10,"critical":true,"deps":[]}
+{"id":"t018","agent":"M","epic":"e3","phase":3,"desc":"Build React web dashboard with spending analytics","effort":8,"critical":true,"deps":["t013"]}
+{"id":"t019","agent":"M","epic":"e7","phase":2,"desc":"Implement JWT authentication and user management system","effort":5,"critical":true,"deps":[]}
+{"id":"t020","agent":"M","epic":"e8","phase":4,"desc":"Build multi-channel notification system (WhatsApp/SMS/Email)","effort":6,"critical":false,"deps":["t001"]}
+{"id":"t021","agent":"Q","epic":"e2","phase":3,"desc":"Create comprehensive test suite for OCR accuracy validation","effort":6,"critical":true,"deps":["t011","t012"]}
+{"id":"t022","agent":"Q","epic":"e7","phase":3,"desc":"Implement security testing for PII protection and encryption","effort":5,"critical":true,"deps":["t003","t019"]}
+{"id":"t023","agent":"Q","epic":"e2","phase":4,"desc":"Build performance testing for p95 <45s processing target","effort":4,"critical":true,"deps":["t015","t016"]}
+{"id":"t024","agent":"Q","epic":"e6","phase":4,"desc":"Create accessibility testing for WCAG AA compliance","effort":3,"critical":false,"deps":["t017","t018"]}
+{"id":"t025","agent":"Q","epic":"e4","phase":4,"desc":"Implement cultural sensitivity validation framework","effort":4,"critical":false,"deps":["t006","t016"]}
+{"id":"t026","agent":"L","epic":"e5","phase":4,"desc":"Validate Maria persona workflow: WhatsApp receipt scanning in <30s","effort":5,"critical":true,"deps":["t009","t016"]}
+{"id":"t027","agent":"L","epic":"e5","phase":4,"desc":"Test Carlos persona workflow: batch business expense processing","effort":4,"critical":true,"deps":["t018","t016"]}
+{"id":"t028","agent":"L","epic":"e5","phase":4,"desc":"Validate Ana persona workflow: free tier budget tracking","effort":3,"critical":false,"deps":["t008","t018"]}
+{"id":"t029","agent":"L","epic":"e5","phase":5,"desc":"Test real-world Hispanic family usage patterns and pain points","effort":6,"critical":true,"deps":["t017","t020"]}
+{"id":"t030","agent":"L","epic":"e2","phase":5,"desc":"Validate Mexican receipt format diversity across regions","effort":4,"critical":true,"deps":["t015"]}
+{"id":"t031","agent":"V","epic":"e5","phase":5,"desc":"Measure and optimize for 87% time reduction goal (15min→2min)","effort":3,"critical":true,"deps":["t026","t029"]}
+{"id":"t032","agent":"V","epic":"e5","phase":5,"desc":"Track spending awareness improvement from 77% to 92%","effort":2,"critical":true,"deps":["t018","t029"]}
+{"id":"t033","agent":"V","epic":"e5","phase":5,"desc":"Optimize for 65% monthly active receipt scanning retention","effort":4,"critical":true,"deps":["t029","t031"]}
+{"id":"t034","agent":"V","epic":"e9","phase":5,"desc":"Plan alpha rollout strategy for 100 users in LA/Houston","effort":3,"critical":false,"deps":["t021","t022"]}
+{"id":"t035","agent":"M","epic":"e8","phase":4,"desc":"Implement Stripe integration with OXXO cash payment support","effort":7,"critical":false,"deps":["t008","t019"]}
+{"id":"t036","agent":"S","epic":"e10","phase":5,"desc":"Design auto-scaling infrastructure for 15K user capacity","effort":6,"critical":false,"deps":["t023"]}
+{"id":"t037","agent":"Q","epic":"e7","phase":4,"desc":"Implement GDPR/INAI compliance for Mexican privacy regulations","effort":5,"critical":true,"deps":["t022"]}
+{"id":"t038","agent":"M","epic":"e3","phase":4,"desc":"Build family expense sharing and aggregation features","effort":6,"critical":false,"deps":["t013","t018"]}
+{"id":"t039","agent":"L","epic":"e6","phase":5,"desc":"Test 3G network performance optimization for mobile users","effort":3,"critical":true,"deps":["t017","t023"]}
+{"id":"t040","agent":"V","epic":"e4","phase":2,"desc":"Establish Hispanic advisory board for cultural validation","effort":4,"critical":true,"deps":["t007"]}

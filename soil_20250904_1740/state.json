@@ -1,0 +1,439 @@
+{
+  "id": "soil_20250904_1740",
+  "prd_hash": "sha256:a8f7d9e2c4b6f1a3e5d8c9b7a2f4e6d1",
+  "created": "2025-09-04T17:40:00Z",
+  "tasks": {
+    "t001": {
+      "agent": "S",
+      "desc": "Design WhatsApp Business API architecture and webhook system",
+      "epic": "e1",
+      "deps": [],
+      "phase": 1,
+      "critical": true,
+      "effort": 8,
+      "acceptance": "API webhook receives photos, validates Business API integration"
+    },
+    "t002": {
+      "agent": "S", 
+      "desc": "Design dual OCR provider architecture (Google Vision + Azure fallback)",
+      "epic": "e2",
+      "deps": [],
+      "phase": 1,
+      "critical": true,
+      "effort": 5,
+      "acceptance": "Provider abstraction layer with failover logic documented"
+    },
+    "t003": {
+      "agent": "S",
+      "desc": "Design secure receipt image storage with AES-256 encryption",
+      "epic": "e1", 
+      "deps": [],
+      "phase": 1,
+      "critical": true,
+      "effort": 6,
+      "acceptance": "S3 bucket with CloudFront, encryption at rest specification"
+    },
+    "t004": {
+      "agent": "S",
+      "desc": "Design PostgreSQL time-series schema for spending analytics",
+      "epic": "e3",
+      "deps": [],
+      "phase": 1,
+      "critical": false,
+      "effort": 4,
+      "acceptance": "Database schema supports efficient spending queries and aggregations"
+    },
+    "t005": {
+      "agent": "S",
+      "desc": "Design Redis caching and queue architecture for async processing",
+      "epic": "e2",
+      "deps": [],
+      "phase": 1,
+      "critical": false,
+      "effort": 3,
+      "acceptance": "Queue priority system for free vs premium processing"
+    },
+    "t006": {
+      "agent": "V",
+      "desc": "Define Spanish-first business taxonomy and cultural categories",
+      "epic": "e4",
+      "deps": [],
+      "phase": 1,
+      "critical": true,
+      "effort": 6,
+      "acceptance": "Cultural category taxonomy with Hispanic spending patterns mapped"
+    },
+    "t007": {
+      "agent": "V",
+      "desc": "Create Hispanic family persona validation framework",
+      "epic": "e5",
+      "deps": [],
+      "phase": 1,
+      "critical": false,
+      "effort": 4,
+      "acceptance": "User interview scripts and validation metrics for cultural authenticity"
+    },
+    "t008": {
+      "agent": "V",
+      "desc": "Design freemium business model with OXXO cash payment integration",
+      "epic": "e5",
+      "deps": [],
+      "phase": 1,
+      "critical": false,
+      "effort": 5,
+      "acceptance": "Pricing tiers and payment flow supporting Mexican payment preferences"
+    },
+    "t009": {
+      "agent": "M",
+      "desc": "Implement WhatsApp webhook API endpoints with photo processing",
+      "epic": "e1",
+      "deps": ["t001"],
+      "phase": 2,
+      "critical": true,
+      "effort": 8,
+      "acceptance": "Webhook receives photos, queues processing, returns confirmation <200ms"
+    },
+    "t010": {
+      "agent": "M",
+      "desc": "Build Flask microservice for receipt upload and validation",
+      "epic": "e1",
+      "deps": ["t003"],
+      "phase": 2,
+      "critical": true,
+      "effort": 6,
+      "acceptance": "API handles photo upload with validation, stores securely in S3"
+    },
+    "t011": {
+      "agent": "M",
+      "desc": "Implement Google Vision OCR integration with error handling",
+      "epic": "e2",
+      "deps": ["t002"],
+      "phase": 2,
+      "critical": true,
+      "effort": 7,
+      "acceptance": "OCR service extracts text with >90% accuracy on Mexican receipts"
+    },
+    "t012": {
+      "agent": "M",
+      "desc": "Build Azure Computer Vision fallback OCR service",
+      "epic": "e2", 
+      "deps": ["t002", "t011"],
+      "phase": 2,
+      "critical": true,
+      "effort": 5,
+      "acceptance": "Automatic fallback when Google Vision fails, maintains p95 <45s"
+    },
+    "t013": {
+      "agent": "M",
+      "desc": "Create PostgreSQL models for receipts, users, and spending data",
+      "epic": "e3",
+      "deps": ["t004"],
+      "phase": 2,
+      "critical": true,
+      "effort": 6,
+      "acceptance": "Database models support receipt storage and spending analytics queries"
+    },
+    "t014": {
+      "agent": "M",
+      "desc": "Build Redis queue management for async OCR processing",
+      "epic": "e2",
+      "deps": ["t005"],
+      "phase": 2,
+      "critical": false,
+      "effort": 4,
+      "acceptance": "Queue handles batch processing with priority levels and monitoring"
+    },
+    "t015": {
+      "agent": "M",
+      "desc": "Implement Mexican receipt format parser for line items",
+      "epic": "e2",
+      "deps": ["t011"],
+      "phase": 3,
+      "critical": true,
+      "effort": 8,
+      "acceptance": "Parser extracts date, merchant, items, prices, tax from Mexican receipts"
+    },
+    "t016": {
+      "agent": "M",
+      "desc": "Build Spanish ML categorization service with user feedback",
+      "epic": "e4",
+      "deps": ["t006", "t015"],
+      "phase": 3,
+      "critical": true,
+      "effort": 9,
+      "acceptance": ">87% automated categorization accuracy with learning feedback loop"
+    },
+    "t017": {
+      "agent": "M",
+      "desc": "Create React Native mobile app with camera integration",
+      "epic": "e6",
+      "deps": [],
+      "phase": 3,
+      "critical": true,
+      "effort": 10,
+      "acceptance": "Mobile app captures receipts, offline queuing, Spanish interface"
+    },
+    "t018": {
+      "agent": "M",
+      "desc": "Build React web dashboard with spending analytics",
+      "epic": "e3",
+      "deps": ["t013"],
+      "phase": 3,
+      "critical": true,
+      "effort": 8,
+      "acceptance": "Web dashboard loads <1.5s, displays spending trends in pesos"
+    },
+    "t019": {
+      "agent": "M",
+      "desc": "Implement JWT authentication and user management system", 
+      "epic": "e7",
+      "deps": [],
+      "phase": 2,
+      "critical": true,
+      "effort": 5,
+      "acceptance": "Secure API authentication with user registration and login"
+    },
+    "t020": {
+      "agent": "M",
+      "desc": "Build multi-channel notification system (WhatsApp/SMS/Email)",
+      "epic": "e8",
+      "deps": ["t001"],
+      "phase": 4,
+      "critical": false,
+      "effort": 6,
+      "acceptance": "Notifications sent via preferred channel with Spanish content"
+    },
+    "t021": {
+      "agent": "Q",
+      "desc": "Create comprehensive test suite for OCR accuracy validation",
+      "epic": "e2",
+      "deps": ["t011", "t012"],
+      "phase": 3,
+      "critical": true,
+      "effort": 6,
+      "acceptance": "Test suite validates >90% OCR accuracy with Mexican receipt corpus"
+    },
+    "t022": {
+      "agent": "Q",
+      "desc": "Implement security testing for PII protection and encryption",
+      "epic": "e7",
+      "deps": ["t003", "t019"],
+      "phase": 3,
+      "critical": true,
+      "effort": 5,
+      "acceptance": "Security audit passes OWASP Top 10, no PII leakage"
+    },
+    "t023": {
+      "agent": "Q",
+      "desc": "Build performance testing for p95 <45s processing target",
+      "epic": "e2",
+      "deps": ["t015", "t016"],
+      "phase": 4,
+      "critical": true,
+      "effort": 4,
+      "acceptance": "Performance tests validate end-to-end processing under load"
+    },
+    "t024": {
+      "agent": "Q",
+      "desc": "Create accessibility testing for WCAG AA compliance",
+      "epic": "e6",
+      "deps": ["t017", "t018"],
+      "phase": 4,
+      "critical": false,
+      "effort": 3,
+      "acceptance": "Accessibility audit passes WCAG AA with screen reader support"
+    },
+    "t025": {
+      "agent": "Q",
+      "desc": "Implement cultural sensitivity validation framework",
+      "epic": "e4",
+      "deps": ["t006", "t016"],
+      "phase": 4,
+      "critical": false,
+      "effort": 4,
+      "acceptance": "Cultural validation tests ensure appropriate Hispanic financial messaging"
+    },
+    "t026": {
+      "agent": "L",
+      "desc": "Validate Maria persona workflow: WhatsApp receipt scanning in <30s",
+      "epic": "e5",
+      "deps": ["t009", "t016"],
+      "phase": 4,
+      "critical": true,
+      "effort": 5,
+      "acceptance": "Working parent can scan receipt via WhatsApp in under 30 seconds"
+    },
+    "t027": {
+      "agent": "L",
+      "desc": "Test Carlos persona workflow: batch business expense processing",
+      "epic": "e5",
+      "deps": ["t018", "t016"],
+      "phase": 4,
+      "critical": true,
+      "effort": 4,
+      "acceptance": "Small business owner can batch process receipts and export for taxes"
+    },
+    "t028": {
+      "agent": "L",
+      "desc": "Validate Ana persona workflow: free tier budget tracking",
+      "epic": "e5",
+      "deps": ["t008", "t018"],
+      "phase": 4,
+      "critical": false,
+      "effort": 3,
+      "acceptance": "Student can track spending on free tier with family sharing"
+    },
+    "t029": {
+      "agent": "L",
+      "desc": "Test real-world Hispanic family usage patterns and pain points",
+      "epic": "e5",
+      "deps": ["t017", "t020"],
+      "phase": 5,
+      "critical": true,
+      "effort": 6,
+      "acceptance": "Hispanic families achieve 65% monthly active usage in pilot"
+    },
+    "t030": {
+      "agent": "L",
+      "desc": "Validate Mexican receipt format diversity across regions",
+      "epic": "e2",
+      "deps": ["t015"],
+      "phase": 5,
+      "critical": true,
+      "effort": 4,
+      "acceptance": "Receipt parser handles format variations from northern/southern Mexico"
+    },
+    "t031": {
+      "agent": "V",
+      "desc": "Measure and optimize for 87% time reduction goal (15min→2min)",
+      "epic": "e5",
+      "deps": ["t026", "t029"],
+      "phase": 5,
+      "critical": true,
+      "effort": 3,
+      "acceptance": "90% of users achieve 2-minute receipt-to-insight target"
+    },
+    "t032": {
+      "agent": "V",
+      "desc": "Track spending awareness improvement from 77% to 92%",
+      "epic": "e5",
+      "deps": ["t018", "t029"],
+      "phase": 5,
+      "critical": true,
+      "effort": 2,
+      "acceptance": "Pre/post surveys show 15 percentage point awareness improvement"
+    },
+    "t033": {
+      "agent": "V",
+      "desc": "Optimize for 65% monthly active receipt scanning retention",
+      "epic": "e5",
+      "deps": ["t029", "t031"],
+      "phase": 5,
+      "critical": true,
+      "effort": 4,
+      "acceptance": "Monthly cohort analysis shows sustainable scanning habits"
+    },
+    "t034": {
+      "agent": "V",
+      "desc": "Plan alpha rollout strategy for 100 users in LA/Houston",
+      "epic": "e9",
+      "deps": ["t021", "t022"],
+      "phase": 5,
+      "critical": false,
+      "effort": 3,
+      "acceptance": "Alpha rollout plan with success metrics and escalation criteria"
+    },
+    "t035": {
+      "agent": "M",
+      "desc": "Implement Stripe integration with OXXO cash payment support",
+      "epic": "e8",
+      "deps": ["t008", "t019"],
+      "phase": 4,
+      "critical": false,
+      "effort": 7,
+      "acceptance": "Payment processing supports Mexican cash payment preferences"
+    },
+    "t036": {
+      "agent": "S",
+      "desc": "Design auto-scaling infrastructure for 15K user capacity",
+      "epic": "e10",
+      "deps": ["t023"],
+      "phase": 5,
+      "critical": false,
+      "effort": 6,
+      "acceptance": "Infrastructure scales automatically to handle growth phases"
+    },
+    "t037": {
+      "agent": "Q",
+      "desc": "Implement GDPR/INAI compliance for Mexican privacy regulations",
+      "epic": "e7",
+      "deps": ["t022"],
+      "phase": 4,
+      "critical": true,
+      "effort": 5,
+      "acceptance": "Privacy controls meet Mexican data protection requirements"
+    },
+    "t038": {
+      "agent": "M",
+      "desc": "Build family expense sharing and aggregation features",
+      "epic": "e3",
+      "deps": ["t013", "t018"],
+      "phase": 4,
+      "critical": false,
+      "effort": 6,
+      "acceptance": "Multi-generational household expense coordination and sharing"
+    },
+    "t039": {
+      "agent": "L",
+      "desc": "Test 3G network performance optimization for mobile users",
+      "epic": "e6",
+      "deps": ["t017", "t023"],
+      "phase": 5,
+      "critical": true,
+      "effort": 3,
+      "acceptance": "App performs well on Mexican mobile networks with data constraints"
+    },
+    "t040": {
+      "agent": "V",
+      "desc": "Establish Hispanic advisory board for cultural validation",
+      "epic": "e4",
+      "deps": ["t007"],
+      "phase": 2,
+      "critical": true,
+      "effort": 4,
+      "acceptance": "Advisory board provides ongoing cultural authenticity validation"
+    }
+  },
+  "phases": [
+    {"id": 1, "name": "Architecture & Planning", "tasks": ["t001","t002","t003","t004","t005","t006","t007","t008"], "agents": {"S":4,"V":3,"M":0,"Q":0,"L":0}, "weeks": 3},
+    {"id": 2, "name": "Core Services", "tasks": ["t009","t010","t011","t012","t013","t014","t019","t040"], "agents": {"S":0,"V":1,"M":6,"Q":0,"L":0}, "weeks": 4},
+    {"id": 3, "name": "Processing & UI", "tasks": ["t015","t016","t017","t018","t021","t022"], "agents": {"S":0,"V":0,"M":4,"Q":2,"L":0}, "weeks": 5},
+    {"id": 4, "name": "Features & Quality", "tasks": ["t020","t023","t024","t025","t035","t037","t038"], "agents": {"S":0,"V":0,"M":3,"Q":3,"L":0}, "weeks": 4},
+    {"id": 5, "name": "Validation & Launch", "tasks": ["t026","t027","t028","t029","t030","t031","t032","t033","t034","t036","t039"], "agents": {"S":1,"V":4,"M":0,"Q":0,"L":5}, "weeks": 6}
+  ],
+  "epics": {
+    "e1": "Receipt Processing Pipeline",
+    "e2": "OCR & Text Processing",
+    "e3": "Analytics & Insights",
+    "e4": "Cultural Localization",
+    "e5": "User Experience Validation",
+    "e6": "Mobile Application",
+    "e7": "Security & Compliance",
+    "e8": "Payments & Notifications",
+    "e9": "Launch Strategy",
+    "e10": "Infrastructure Scaling"
+  },
+  "risks": [
+    {"type": "technical", "desc": "OCR accuracy degradation with poor image quality", "mitigation": "Dual provider strategy + user guidance", "impact": "high"},
+    {"type": "cultural", "desc": "Hispanic community cultural appropriation concerns", "mitigation": "Advisory board + authentic development approach", "impact": "high"},
+    {"type": "business", "desc": "Established apps adding Spanish localization", "mitigation": "Cultural authenticity differentiation", "impact": "medium"},
+    {"type": "technical", "desc": "WhatsApp Business API rate limits", "mitigation": "SMS fallback + queue management", "impact": "medium"}
+  ],
+  "success_metrics": {
+    "processing_efficiency": "87% time reduction (15min → 2min)",
+    "spending_awareness": "+15 percentage points (77% → 92%)",
+    "retention": "65% monthly active receipt scanning",
+    "ocr_accuracy": ">90% on Mexican receipts",
+    "cultural_rating": ">4.2/5.0 Hispanic community satisfaction"
+  }
+}
