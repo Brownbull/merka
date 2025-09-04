@@ -1,0 +1,138 @@
+{
+  "soil_ref": "soil_20250904_1740",
+  "generated": "2025-09-04T10:05:00Z",
+  "tiers": [
+    {
+      "level": 1,
+      "name": "root",
+      "description": "MVP - Core value proposition: WhatsApp receipt scanning with basic Spanish categorization",
+      "tasks": [
+        "t001", "t002", "t003", "t006", "t009", "t010", "t011", "t019"
+      ],
+      "features": [
+        "WhatsApp Business API integration",
+        "Basic OCR with Google Vision",
+        "Secure receipt image storage",
+        "Spanish business category taxonomy", 
+        "Receipt upload and validation",
+        "User authentication system"
+      ],
+      "duration_weeks": 8,
+      "budget": 35000,
+      "agents": {
+        "SYRA": 3,
+        "VIVA": 1, 
+        "MAKA": 4,
+        "QRA": 0,
+        "LUA": 0
+      },
+      "criteria": {
+        "c1": "OCR >80% accuracy on Mexican receipts",
+        "c2": "WhatsApp photo upload success >95%",
+        "c3": "Basic Spanish categorization >75% accuracy",
+        "c4": "End-to-end processing <60 seconds",
+        "c5": "User registration and login functional"
+      },
+      "epics_included": ["e1", "e2", "e4", "e7"],
+      "percentage_complete": 20
+    },
+    {
+      "level": 2, 
+      "name": "stem",
+      "description": "Essential Features - Dual OCR, mobile app, and analytics dashboard",
+      "tasks": [
+        "t012", "t013", "t015", "t017", "t018", "t021"
+      ],
+      "features": [
+        "Azure Computer Vision fallback OCR",
+        "PostgreSQL spending data models", 
+        "Mexican receipt format parser",
+        "React Native mobile app with camera",
+        "Web dashboard with peso analytics",
+        "OCR accuracy test suite"
+      ],
+      "duration_weeks": 6,
+      "budget": 28000,
+      "agents": {
+        "SYRA": 0,
+        "VIVA": 0,
+        "MAKA": 5, 
+        "QRA": 1,
+        "LUA": 0
+      },
+      "criteria": {
+        "c1": "Dual OCR provider failover functional",
+        "c2": "Mobile app captures and queues receipts offline",
+        "c3": "Receipt parser extracts line items >85% accuracy",
+        "c4": "Dashboard loads spending data <2 seconds",
+        "c5": "OCR test suite validates accuracy metrics"
+      },
+      "epics_included": ["e2", "e3", "e6"],
+      "percentage_complete": 35
+    },
+    {
+      "level": 3,
+      "name": "branch", 
+      "description": "Competitive Features - ML categorization, cultural validation, and user workflows",
+      "tasks": [
+        "t016", "t022", "t026", "t027", "t040", "t023", "t031", "t032"
+      ],
+      "features": [
+        "Spanish ML categorization with feedback",
+        "Security testing and PII protection",
+        "Maria persona WhatsApp workflow validation",
+        "Carlos business expense workflow validation", 
+        "Hispanic advisory board establishment",
+        "Performance testing for <45s target",
+        "87% time reduction optimization",
+        "Spending awareness tracking improvement"
+      ],
+      "duration_weeks": 8,
+      "budget": 42000,
+      "agents": {
+        "SYRA": 0,
+        "VIVA": 3,
+        "MAKA": 1,
+        "QRA": 2,
+        "LUA": 2
+      },
+      "criteria": {
+        "c1": "ML categorization >87% accuracy with Spanish feedback",
+        "c2": "Security audit passes OWASP Top 10",
+        "c3": "Maria persona completes receipt scan in <30s",
+        "c4": "Carlos persona batch processes business receipts",
+        "c5": "Hispanic advisory board validates cultural authenticity",
+        "c6": "Performance meets p95 <45s processing target",
+        "c7": "Users achieve 15min→2min processing time reduction"
+      },
+      "epics_included": ["e4", "e5", "e7"],
+      "percentage_complete": 55
+    }
+  ],
+  "remaining_tasks": [
+    "t004", "t005", "t007", "t008", "t014", "t020", "t024", "t025", 
+    "t028", "t029", "t030", "t033", "t034", "t035", "t036", "t037", 
+    "t038", "t039"
+  ],
+  "enterprise_features": [
+    "Redis caching and queue architecture",
+    "Hispanic family persona framework", 
+    "Freemium model with OXXO payments",
+    "Multi-channel notifications",
+    "Accessibility WCAG AA compliance",
+    "Cultural sensitivity validation",
+    "Free tier budget tracking workflow",
+    "Real-world Hispanic family testing",
+    "Mexican regional receipt format validation", 
+    "65% retention optimization",
+    "Alpha rollout strategy",
+    "Stripe OXXO cash payment integration",
+    "Auto-scaling infrastructure",
+    "GDPR/INAI privacy compliance",
+    "Family expense sharing features",
+    "3G network performance optimization"
+  ],
+  "total_budget": 105000,
+  "total_duration_weeks": 22,
+  "deployment_strategy": "Progressive rollout with cultural validation gates"
+}
